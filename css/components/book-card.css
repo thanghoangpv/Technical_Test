@@ -1,0 +1,103 @@
+.book-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #FAF6ED;
+  border: 1px solid #E6DEC9;
+  border-radius: 8px;          
+  padding: 12px;            
+  box-sizing: border-box;
+}
+
+.book-link {
+  text-decoration: none; 
+  color: inherit;        
+  display: block;      
+}
+
+.book-cover {
+  position: relative;
+  min-height: 300px;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.book-badge {
+  position: absolute;
+  top: 16px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;  
+  font-weight: 700;
+  text-transform: uppercase; 
+  letter-spacing: 0.05em;  
+}
+
+.book-badge.bestseller {
+  left: 16px;
+  background: #B88E4C;
+  color: #2A241F;
+}
+
+.book-badge.new {
+  right: 16px;
+  background: #FFFFFF;
+  color: #2A241F;
+}
+
+.book-title-cover {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.book-author-cover {
+  font-size: 10px;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.book-title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.book-author {
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.book-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-price {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.old-price {
+  margin-left: 4px;
+  text-decoration: line-through;
+  color: #999;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.book-rating {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.star {
+  color: gold;
+}

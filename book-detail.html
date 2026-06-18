@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Lighthouse Keeper - Pages &amp; Co.</title>
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/components/navbar.css" />
+    <link rel="stylesheet" href="./css/components/footer.css" />
+    <link rel="stylesheet" href="./css/pages/detail/book-detail.css" />
+    <link rel="stylesheet" href="./css/components/book-card.css" />
+  </head>
+  <body>
+    <header id="navbar-container" class="navbar"></header>
+
+    <main class="page">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="#">Home</a>
+        <span>/</span>
+        <a href="#">Books</a>
+        <span>/</span>
+        <span class="breadcrumb-current">The Lighthouse Keeper</span>
+      </nav>
+
+      <div class="product-grid">
+        <div class="product-image-side" data-purpose="product-image-container">
+          <div class="product-book-cover">
+            <div>
+              <h2 class="cover-title">The Lighthouse Keeper</h2>
+              <p class="cover-author">Mara Ellison</p>
+            </div>
+            <div class="cover-badge">
+              <svg fill="none" height="60" viewBox="0 0 60 60" width="60">
+                <circle
+                  cx="30"
+                  cy="30"
+                  r="28"
+                  stroke="white"
+                  stroke-width="1"
+                ></circle>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div data-purpose="product-details">
+          <span class="tag-category">Fiction</span>
+          <h1 class="product-title">The Lighthouse Keeper</h1>
+          <p class="product-author">by Mara Ellison</p>
+
+          <div class="product-rating-meta">
+            <div class="rating-badge">
+              <span class="star-icon">★</span>
+              <span class="rating-score">4.6</span>
+            </div>
+            <span>•</span>
+            <span>312 pages</span>
+            <span>•</span>
+            <span>2023</span>
+          </div>
+
+          <div class="product-price-section">
+            <span class="price-current">$18.00</span>
+            <span class="price-old">$24.00</span>
+          </div>
+
+          <p class="product-description">
+            A widowed keeper and a runaway girl share a winter on a remote
+            island, learning what it means to keep a light burning for someone
+            else.
+          </p>
+
+          <div class="action-group">
+            <button class="btn-add-to-bag">Add to bag — $18.00</button>
+            <button class="btn-wishlist">
+              <svg
+                class="heart-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                ></path>
+              </svg>
+              Wishlist
+            </button>
+          </div>
+
+          <div class="metadata-grid">
+            <div>
+              <span class="metadata-label">Format</span>
+              <span class="metadata-value">Paperback</span>
+            </div>
+            <div>
+              <span class="metadata-label">Pages</span>
+              <span class="metadata-value">312</span>
+            </div>
+            <div>
+              <span class="metadata-label">Published</span>
+              <span class="metadata-value">2023</span>
+            </div>
+            <div>
+              <span class="metadata-label">Publisher</span>
+              <span class="metadata-value">Harbor &amp; Vale</span>
+            </div>
+            <div>
+              <span class="metadata-label">Language</span>
+              <span class="metadata-value">English</span>
+            </div>
+            <div>
+              <span class="metadata-label">ISBN</span>
+              <span class="metadata-value">978-1-23456-001-2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="recommended-section">
+        <h3 class="section-title">You may also like</h3>
+
+        <div class="book-grid" id="recommendedGrid"></div>
+      </section>
+    </main>
+    <footer id="footer-container"></footer>
+
+    <script src="./js/data.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/navbar.js"></script>
+  </body>
+</html>

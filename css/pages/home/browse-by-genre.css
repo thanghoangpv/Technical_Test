@@ -1,0 +1,79 @@
+.genres {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  margin-top: 48px;
+}
+
+.genres-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent); 
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.genres-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+.genres-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .genres-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .genres-grid {
+    grid-template-columns: repeat(6, 1fr); 
+  }
+}
+
+.genre-card {
+  height: 128px;
+  padding: 24px;
+  border-radius: var(--radius); 
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  box-sizing: border-box;
+}
+
+.genre-card:hover {
+  opacity: 0.9;
+}
+
+.genre-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.genre-card p {
+  font-size: 10px;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.fiction     { background-color: #925f4c; }
+.mystery     { background-color: #6a7c9f; }
+.scifi       { background-color: #638b8e; }
+.poetry      { background-color: #9b5d76; }
+.children    { background-color: #b88e4c; }
+.nonfiction  { background-color: #7d6c96; }

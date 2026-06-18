@@ -1,0 +1,83 @@
+.order-summary-card {
+  background-color: #f8f7ef;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.summary-title {
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.25rem;
+  margin: 0 0 24px 0;
+  font-weight: 400;
+}
+
+.summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 0.875rem;
+  margin-bottom: 24px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-row .label {
+  color: #57534e;
+}
+
+.summary-row .value--free {
+  color: var(--text-muted);
+}
+
+.summary-total-section {
+  border-top: 1px solid #f5f5f4;
+  padding-top: 16px;
+  margin-bottom: 32px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.total-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.total-price {
+  font-family: "Libre Baskerville", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: #7a3e2e; 
+  color: #ffffff;
+  border: none;
+  padding: 16px; 
+  border-radius: 999px; 
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 16px; 
+}
+
+.checkout-btn:hover {
+  background-color: #2a1e17; 
+}
+
+.checkout-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}

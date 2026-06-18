@@ -1,0 +1,96 @@
+.reading-room {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.reading-room-content {
+  background: #3d5546;
+  border-radius: 32px;
+
+  padding: 64px 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+
+  color: #fff;
+}
+
+.reading-room-subtitle {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.reading-room-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 550px;
+  margin-bottom: 24px;
+}
+
+.reading-room-description {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 450px;
+}
+
+.join-btn {
+  background: #b88e4c;
+  color: #2a241f;
+
+  border: none;
+  border-radius: 999px;
+
+  padding: 16px 40px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  transition: background-color 0.3s ease;
+}
+
+.join-btn:hover {
+  background: #a67d42;
+}
+
+@media (max-width: 768px) {
+  .reading-room {
+    padding: 24px 16px;
+  }
+
+  .reading-room-content {
+    padding: 32px 24px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+
+    border-radius: 24px;
+  }
+
+  .reading-room-title {
+    font-size: 32px;
+    max-width: 100%;
+  }
+
+  .reading-room-description {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .join-btn {
+    width: 100%;
+    padding: 14px 20px;
+  }
+}
