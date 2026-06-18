@@ -1,6 +1,6 @@
 .cart-item {
   background-color: #f8f7ef;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 24px;
   display: flex;
@@ -68,7 +68,7 @@
 .item-author {
   margin: 0;
   font-size: 0.875rem;
-  color: var(--text-muted);
+  color: var(--muted);
 }
 
 .remove-btn {
@@ -85,7 +85,7 @@
 }
 
 .remove-btn:hover {
-  color: var(--text-dark);
+  color: var(--text);
 }
 
 .item-actions {
@@ -115,12 +115,12 @@
   border: none;
   font-size: 1.125rem;
   padding: 0 8px;
-  color: var(--text-muted);
+  color: var(--muted);
   cursor: pointer;
 }
 
 .quantity-selector button:hover {
-  color: var(--text-dark);
+  color: var(--text);
 }
 
 .quantity-selector span {
