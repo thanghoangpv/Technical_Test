@@ -225,6 +225,7 @@
   .bag-btn {
     width: 100%;
     justify-content: center;
+    text-decoration: none;
   }
 
   .navbar__menu.active {

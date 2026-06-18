@@ -52,8 +52,7 @@
 .footer-logo-icon {
   width: 32px;
   height: 32px;
-  background-color: #9E7A44;
-  border-radius: 4px;
+  background-color: #9E7A44; 
   display: flex;
   align-items: center;
   justify-content: center;

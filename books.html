@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./css/pages/books/books.css" />
     <link rel="stylesheet" href="./css/components/navbar.css" />
     <link rel="stylesheet" href="./css/components/footer.css" />
+    <link rel="stylesheet" href="./css/pages/bag/breadcrumb.css" />
     <link rel="stylesheet" href="./css/components/book-card.css" />
+    <link rel="stylesheet" href="./css/components/login-modal.css" />
   </head>
   <body>
     <header id="navbar-container" class="navbar"></header>
@@ -27,16 +29,7 @@
       </header>
 
       <section class="controls" aria-label="Filters and sort">
-        <div class="filters">
-          <button class="filter-btn is-active" type="button">All</button>
-          <button class="filter-btn" type="button">Fiction</button>
-          <button class="filter-btn" type="button">Mystery</button>
-          <button class="filter-btn" type="button">Sci-Fi</button>
-          <button class="filter-btn" type="button">Non-fiction</button>
-          <button class="filter-btn" type="button">Poetry</button>
-          <button class="filter-btn" type="button">Children</button>
-          <button class="filter-btn" type="button">Biography</button>
-        </div>
+        <div class="filters" id="filtersContainer"></div>
 
         <div class="sort">
           <label for="sort">Sort by</label>
@@ -57,8 +50,9 @@
     </main>
     <footer id="footer-container"></footer>
 
+    <div id="login-modal-container"></div>
+
     <script src="./js/data.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/navbar.js"></script>
   </body>
 </html>

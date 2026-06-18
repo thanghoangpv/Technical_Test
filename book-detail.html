@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="./css/components/navbar.css" />
     <link rel="stylesheet" href="./css/components/footer.css" />
     <link rel="stylesheet" href="./css/pages/detail/book-detail.css" />
+    <link rel="stylesheet" href="./css/pages/bag/breadcrumb.css" />
     <link rel="stylesheet" href="./css/components/book-card.css" />
+    <link rel="stylesheet" href="./css/components/login-modal.css" />
   </head>
   <body>
     <header id="navbar-container" class="navbar"></header>
@@ -71,7 +73,9 @@
           </p>
 
           <div class="action-group">
-            <button class="btn-add-to-bag">Add to bag — $18.00</button>
+            <button class="btn-add-to-bag" data-id="1">
+              Add to bag — $18.00
+            </button>
             <button class="btn-wishlist">
               <svg
                 class="heart-icon"
@@ -127,8 +131,9 @@
     </main>
     <footer id="footer-container"></footer>
 
+    <div id="login-modal-container"></div>
+
     <script src="./js/data.js"></script>
     <script src="./js/main.js"></script>
-    <script src="./js/navbar.js"></script>
   </body>
 </html>

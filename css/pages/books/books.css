@@ -1,4 +1,4 @@
-.breadcrumb {
+/* .breadcrumb {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -14,7 +14,7 @@
 .breadcrumb-current {
   color: var(--text);
   font-weight: 700;
-}
+} */
 
 .page-header {
   display: flex;

@@ -1,4 +1,4 @@
-.breadcrumb {
+/* .breadcrumb {
   margin-bottom: 2rem;
   font-size: 0.875rem;
   color: var(--muted);
@@ -22,7 +22,7 @@
 .breadcrumb-current {
   color: #2d2926 !important;
   font-weight: 500;
-}
+} */
 
 .product-grid {
   display: grid;

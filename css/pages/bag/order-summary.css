@@ -1,6 +1,6 @@
 .order-summary-card {
   background-color: #f8f7ef;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 24px;
 }
@@ -34,8 +34,9 @@
 }
 
 .summary-total-section {
-  border-top: 1px solid #f5f5f4;
+  border-top: 1px solid #cfcfcf;
   padding-top: 16px;
+  margin-top: 24px;
   margin-bottom: 32px;
 }
 
