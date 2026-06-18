@@ -54,9 +54,10 @@ async function initPage() {
   if (typeof books !== "undefined")
     updateBooks();
   if (typeof recommendedBooks !== "undefined") renderCardBooks("recommendedGrid", recommendedBooks);
-  if (typeof cartItems !== "undefined") {
-  renderCart();
-}
+  if (document.getElementById("cart-items-placeholder")) {
+    renderCart();
+    renderOrderSummary();
+  }
 }
 
 
@@ -223,6 +224,19 @@ function renderCart() {
 
   if (!container || typeof cartItems === "undefined") return;
 
+  if (cartItems.length === 0) {
+    container.innerHTML = `
+      <div class="empty-cart">
+        <h2>Your bag is empty</h2>
+        <a href="./books.html">
+          Continue shopping
+        </a>
+      </div>
+    `;
+
+    return;
+  }
+
   container.innerHTML = cartItems
     .map(
       (item) => `
@@ -289,6 +303,12 @@ function renderOrderSummary() {
   );
 
   if (!summary) return;
+
+    if (cartItems.length === 0) {
+    summary.innerHTML = "";
+
+    return;
+  }
 
   const totalItems = cartItems.reduce(
     (sum, item) => sum + item.quantity,
