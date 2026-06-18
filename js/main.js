@@ -42,8 +42,12 @@ async function initPage() {
   setupLoginModal();
   setupMobileMenu();
   setupHeroCarousel();
+
   renderFilters();
   setupFilters();
+
+  setupAddToBag();
+  updateBagCount();
  
   if (typeof featuredMonth !== "undefined") renderCardBooks("booksGrid", featuredMonth);
   if (typeof newArrivals !== "undefined") renderCardBooks("newArrivalsGrid", newArrivals);
@@ -147,7 +151,74 @@ function renderDots() {
     .join("");
 }
 
+function getCartItems() {
+  return JSON.parse(localStorage.getItem("cartItems")) || [];
+}
+
+function saveCartItems(cartItems) {
+  localStorage.setItem(
+    "cartItems",
+    JSON.stringify(cartItems)
+  );
+}
+
+function addToBag(bookId) {
+  const cartItems = getCartItems();
+
+  const book = books.find((book) => book.id === bookId);
+
+  if (!book) return;
+
+  const existingItem = cartItems.find(
+    (item) => item.id === bookId
+  );
+
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cartItems.push({
+      ...book,
+      quantity: 1,
+    });
+  }
+
+  saveCartItems(cartItems);
+
+  updateBagCount();
+}
+
+function updateBagCount() {
+  const badge = document.querySelector(".bag-count");
+
+  if (!badge) return;
+
+  const cartItems = getCartItems();
+
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.quantity,
+    0
+  );
+
+  badge.textContent = total;
+}
+
+function setupAddToBag() {
+  const button =
+    document.querySelector(".btn-add-to-bag");
+
+  if (!button) return;
+
+  button.addEventListener("click", () => {
+    const bookId = Number(button.dataset.id);
+
+    addToBag(bookId);
+
+    alert("Added to bag!");
+  });
+}
+
 function renderCart() {
+  const cartItems = getCartItems();
   const container = document.getElementById("cart-items-placeholder");
 
   if (!container || typeof cartItems === "undefined") return;
@@ -170,6 +241,7 @@ function renderCart() {
 
             <button
               class="remove-btn"
+              type="button"
               data-id="${item.id}"
             >
               Remove
@@ -179,13 +251,21 @@ function renderCart() {
 
         <div class="item-actions">
           <div class="quantity-selector">
-            <button class="decrease-btn" data-id="${item.id}">
+           <button
+              type="button"
+              class="decrease-btn"
+              data-id="${item.id}"
+            >
               -
             </button>
 
             <span>${item.quantity}</span>
 
-            <button class="increase-btn" data-id="${item.id}">
+            <button
+              type="button"
+              class="increase-btn"
+              data-id="${item.id}"
+            >
               +
             </button>
           </div>
@@ -203,6 +283,7 @@ function renderCart() {
 }
 
 function renderOrderSummary() {
+  const cartItems = getCartItems();
   const summary = document.getElementById(
     "order-summary-placeholder"
   );
@@ -265,6 +346,56 @@ function renderOrderSummary() {
       </p>
     </div>
   `;
+}
+
+function increaseQuantity(id) {
+  const cartItems = getCartItems();
+
+  const item = cartItems.find(
+    item => item.id === id
+  );
+
+  if (!item) return;
+
+  item.quantity++;
+
+  saveCartItems(cartItems);
+
+  renderCart();
+  renderOrderSummary();
+  updateBagCount();
+}
+
+function decreaseQuantity(id) {
+  const cartItems = getCartItems();
+
+  const item = cartItems.find(
+    item => item.id === id
+  );
+
+  if (!item) return;
+
+  if (item.quantity > 1) {
+    item.quantity--;
+  }
+
+  saveCartItems(cartItems);
+
+  renderCart();
+  renderOrderSummary();
+  updateBagCount();
+}
+
+function removeCartItem(id) {
+  const cartItems = getCartItems().filter(
+    item => item.id !== id
+  );
+
+  saveCartItems(cartItems);
+
+  renderCart();
+  renderOrderSummary();
+  updateBagCount();
 }
 
 
@@ -466,6 +597,35 @@ document.addEventListener("click", (e) => {
     }
 
     renderCart();
+  }
+});
+
+document.addEventListener("click", (e) => {
+  const increaseBtn =
+    e.target.closest(".increase-btn");
+
+  const decreaseBtn =
+    e.target.closest(".decrease-btn");
+
+  const removeBtn =
+    e.target.closest(".remove-btn");
+
+  if (increaseBtn) {
+    increaseQuantity(
+      Number(increaseBtn.dataset.id)
+    );
+  }
+
+  if (decreaseBtn) {
+    decreaseQuantity(
+      Number(decreaseBtn.dataset.id)
+    );
+  }
+
+  if (removeBtn) {
+    removeCartItem(
+      Number(removeBtn.dataset.id)
+    );
   }
 });
 

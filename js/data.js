@@ -213,16 +213,19 @@ const recommendedBooks = [
   }
 ];
 
-const cartItems = [
-  {
-    id: 1,
-    title: "The Lighthouse Keeper",
-    author: "Mara Ellison",
-    price: 18,
-    quantity: 2,
-    color: "#4A6741",
-  },
-];
+// const cartItems = [
+//   {
+//     id: 1,
+//     title: "The Lighthouse Keeper",
+//     author: "Mara Ellison",
+//     price: 18,
+//     quantity: 2,
+//     color: "#4A6741",
+//   },
+// ];
+
+let cartItems =
+  JSON.parse(localStorage.getItem("cartItems")) || [];
 
 const heroSlides = [
   {
